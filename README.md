@@ -1,5 +1,5 @@
 # ChatHub :speech_balloon:
-![ChatHub Logo](url-to-logo)
+![ChatHub Logo](https://res.cloudinary.com/dbisqdemp/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1696282835/Creative_Chatting_App_Logo_swq7oq.png)
 
 *"Where conversations come alive..."*
 
