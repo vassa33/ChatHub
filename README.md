@@ -20,10 +20,11 @@ With ChatHub, users can join diverse conversation rooms or create their own grou
 To run ChatHub, follow these installation steps:
 
 ```shell
-git clone <repository-url> <!-- Replace with the actual repository URL -->
+git clone https://www.github.com/vassa33/ChatHub.git
 cd ChatHub
 npm install
-npm start
+npm start 
+```
 
 ## Authors
 
