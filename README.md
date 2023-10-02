@@ -24,7 +24,7 @@ To get a glimpse of the design model of the ChatHub App, click on this <a href="
 
 For a good prototyping experience of the ChatHub model, we used **Adalo** to design. **Adalo** is an interactive, intuitive and easy-to-use design tool which has excellent user-interface and user experience, giving you the full autonomy to design your app however you like, with an amazing preview show to display your prototype. 
 
-If you would like to use or learn more about Adalo, visit their official page via this <a href="https://www.adalo.com/" target="_blank">link</a>.
+If you would like to use or learn more about **Adalo**, visit their official page via this <a href="https://www.adalo.com/" target="_blank">link</a>.
 
 ## Programming Tools :computer:
 
@@ -48,7 +48,6 @@ npm start
 
 ## Authors :black_nib:
 
-
-- Vanessa Peggy [@vassa33](https://www.github.com/vassa33)
-- Okeke Makuochukwu [@Makuo67](https://www.github.com/Makuo67)
-- Nino Nwachukwu [@Nino-Of-Tech](https://www.github.com/Nino-Of-Tech)
+- **Peggy Vanessa Otieno** - [Github](https://www.github.com/vassa33) (p.otieno@alustudent.com)
+- **Christian Okeke Makuochukwu** - [Github](https://www.github.com/Makuo67) (m.okeke@alustudent.com)
+- **Nino Chibuzor Nwachukwu** - [Github](https://www.github.com/Nino-Of-Tech) (c.nwachukwu@alustudent.com)
