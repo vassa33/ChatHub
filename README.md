@@ -1,12 +1,13 @@
-# ChatHub
+# ChatHub :speech_balloon:
 ![ChatHub Logo](url-to-logo)
+*"Where conversations come alive..."*
 
 Mobile Development with Flutter and Dart
 
 ChatHub is a dynamic and user-friendly chatting application that connects people through various groups.
 With ChatHub, users can join diverse conversation rooms or create their own groups to interact with others who share similar interests, passions, or objectives.
 
-## Features
+## Features :iphone:
 
 - **User Authentication**: Secure login and registration
 - **Group Chatrooms**: Create and join diverse chat groups
@@ -15,9 +16,19 @@ With ChatHub, users can join diverse conversation rooms or create their own grou
 - **Media Sharing**: Share images, videos, and documents
 - **Notifications**: Stay informed about new messages and group activities
 
-## Installation
+## Design Model & Prototype :art:
 
-To run ChatHub, follow these installation steps:
+To get a glimpse of the design model of the ChatHub App, click on this <a href="https://previewer.adalo.com/12d9a19c-2748-4637-a739-2fce23be1b0f" target="_blank">link</a> to view. 
+
+##### Prototype Design Tool :paintbrush:
+
+For a good prototyping experience of the ChatHub model, we used **Adalo** to design. **Adalo** is an interactive, intuitive and easy-to-use design tool which has excellent user-interface and user experience, giving you the full autonomy to design your app however you like, with an amazing preview show to display your prototype. 
+
+If you would like to use or learn more about Adalo, visit their official page via this <a href="https://www.adalo.com/" target="_blank">link</a>.
+
+## Installation :hammer_and_wrench:
+
+To run ChatHub, follow these installation steps: 
 
 ```shell
 git clone https://www.github.com/vassa33/ChatHub.git
@@ -26,7 +37,7 @@ npm install
 npm start 
 ```
 
-## Authors
+## Authors :black_nib:
 
 
 - Vanessa Peggy [@vassa33](https://www.github.com/vassa33)
