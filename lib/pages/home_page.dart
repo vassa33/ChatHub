@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
         actions: [
           IconButton(
               onPressed: () {
-                nextScreen(context, const SearchPage());
+                nextScreenReplace(context, const SearchPage());
               },
               icon: const Icon(
                 Icons.search,
