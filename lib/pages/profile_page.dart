@@ -5,9 +5,9 @@ import 'package:chathub/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
-  String userName;
-  String email;
-  ProfilePage({Key? key, required this.email, required this.userName})
+  final String userName;
+  final String email;
+  const ProfilePage({Key? key, required this.email, required this.userName})
       : super(key: key);
 
   @override
