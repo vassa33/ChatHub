@@ -1,9 +1,11 @@
 import 'package:chathub/helper/helper_function.dart';
 import 'package:chathub/service/database_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthService {
   final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+  final GoogleSignIn googleSignIn = GoogleSignIn();
 
   // login
   Future loginWithUserNameandPassword(String email, String password) async {
@@ -18,6 +20,37 @@ class AuthService {
       }
     } on FirebaseAuthException catch (e) {
       return e.message;
+    }
+  }
+
+  // Google Sign-In
+  Future googleSignInMethod() async {
+    try {
+      final GoogleSignInAccount? googleSignInAccount =
+          await googleSignIn.signIn();
+
+      if (googleSignInAccount == null) {
+        // The user canceled the sign-in process
+        return null;
+      }
+
+      final GoogleSignInAuthentication googleSignInAuthentication =
+          await googleSignInAccount.authentication;
+      final AuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleSignInAuthentication.accessToken,
+        idToken: googleSignInAuthentication.idToken,
+      );
+
+      UserCredential authResult =
+          await firebaseAuth.signInWithCredential(credential);
+      User? user = authResult.user;
+
+      // ignore: unnecessary_null_comparison
+      if (user != null) {
+        return true;
+      }
+    } catch (e) {
+      return e.toString();
     }
   }
 

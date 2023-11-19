@@ -22,6 +22,26 @@ class _LoginPageState extends State<LoginPage> {
   String password = "";
   bool _isLoading = false;
   AuthService authService = AuthService();
+
+// Add a method to handle Google Sign-In
+  googleSignIn() async {
+    dynamic result = await authService.googleSignInMethod();
+
+    if (result == true) {
+      // Successfully signed in with Google
+      QuerySnapshot snapshot =
+          await DatabaseService(uid: FirebaseAuth.instance.currentUser!.uid)
+              .gettingUserData(email);
+      await HelperFunctions.saveUserLoggedInStatus(true);
+      await HelperFunctions.saveUserEmailSF(email);
+      await HelperFunctions.saveUserNameSF(snapshot.docs[0]['fullName']);
+      nextScreenReplace(context, const HomePage());
+    } else if (result != null) {
+      // Handle Google Sign-In error
+      showSnackbar(context, Colors.red, result);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -97,6 +117,38 @@ class _LoginPageState extends State<LoginPage> {
                         const SizedBox(
                           height: 20,
                         ),
+                        // Add a Google Sign-In button
+                        SizedBox(
+                          width: double.infinity,
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: Theme.of(context).primaryColor,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30),
+                              ),
+                              padding: EdgeInsets.only(top: 10),
+                            ),
+                            onPressed: () {
+                              googleSignIn();
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  "assets/google.png", // Replace with your Google logo asset
+                                  height: 20.0,
+                                ),
+                                const SizedBox(width: 10),
+                                const Text("Sign in with Google"),
+                              ],
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height:
+                              40, // Adjust the value as needed for the bottom margin
+                        ),
+
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(

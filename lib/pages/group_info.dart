@@ -7,9 +7,9 @@ import 'package:flutter/material.dart';
 
 // Widget to display group information.
 class GroupInfo extends StatefulWidget {
-  final String groupId;     // ID of the group.
-  final String groupName;   // Name of the group.
-  final String adminName;   // Name of the group admin.
+  final String groupId; // ID of the group.
+  final String groupName; // Name of the group.
+  final String adminName; // Name of the group admin.
 
   // Constructor to initialize required properties.
   const GroupInfo({
@@ -89,11 +89,9 @@ class _GroupInfoState extends State<GroupInfo> {
                           onPressed: () async {
                             DatabaseService(
                                     uid: FirebaseAuth.instance.currentUser!.uid)
-                                .toggleGroupJoin(
-                                    widget.groupId,
-                                    getName(widget.adminName),
-                                    widget.groupName)
-                                .whenComplete(() {
+                                .toggleGroupJoin(widget.groupId,
+                                    getName(widget.adminName), widget.groupName)
+                                .then((_) {
                               nextScreenReplace(context, const HomePage());
                             });
                           },
@@ -169,14 +167,20 @@ class _GroupInfoState extends State<GroupInfo> {
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
                   return Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
                     child: ListTile(
                       leading: CircleAvatar(
                         radius: 30,
                         backgroundColor: Theme.of(context).primaryColor,
                         child: Text(
-                          getName(snapshot.data['members'][index]).substring(0, 1).toUpperCase(),
-                          style: const TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold),
+                          getName(snapshot.data['members'][index])
+                              .substring(0, 1)
+                              .toUpperCase(),
+                          style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
                         ),
                       ),
                       title: Text(getName(snapshot.data['members'][index])),
