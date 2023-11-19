@@ -41,14 +41,16 @@ class AuthService {
         idToken: googleSignInAuthentication.idToken,
       );
 
-      UserCredential authResult =
+      final UserCredential authResult =
           await firebaseAuth.signInWithCredential(credential);
-      User? user = authResult.user;
+      final User? user = authResult.user;
 
-      // ignore: unnecessary_null_comparison
-      if (user != null) {
-        return true;
-      }
+      return user;
+
+      // ignore: unnecessary_null_comparison, dead_code
+      //if (user != null) {
+      //  return true;
+      //}
     } catch (e) {
       return e.toString();
     }
