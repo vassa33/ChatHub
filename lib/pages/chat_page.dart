@@ -5,6 +5,7 @@ import 'package:chathub/widgets/message_tile.dart';
 import 'package:chathub/widgets/widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart' show Firebase;
 
 /// Represents the chat page of the app where users can communicate within a group.
 /// [groupId] is the unique identifier of the group.
@@ -37,7 +38,12 @@ class _ChatPageState extends State<ChatPage> {
   @override
   void initState() {
     super.initState();
-    getChatandAdmin(); // Fetch the chat messages and the group's admin.
+    initializeFirebaseAndData(); // Updated initialization
+  }
+
+  Future<void> initializeFirebaseAndData() async {
+    await Firebase.initializeApp();
+    getChatandAdmin();
   }
 
   /// Fetches the chat messages and the group's admin information.
