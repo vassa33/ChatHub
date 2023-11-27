@@ -2,8 +2,12 @@ import 'package:chathub/widgets/message_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:chathub/pages/chat_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async {
+  // Initialize Firebase outside the test
+  await setupFirebase();
+
   testWidgets('Chat Page Widgets Test', (tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(
@@ -38,4 +42,9 @@ void main() {
     // Test if the message is visible after sending.
     expect(find.text('Test message'), findsOneWidget);
   });
+}
+
+Future<void> setupFirebase() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
 }
