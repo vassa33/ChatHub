@@ -7,11 +7,10 @@
 ChatHub is a dynamic and user-friendly chatting application that connects people through various groups.
 With ChatHub, users can join diverse conversation rooms or create their own groups to interact with others who share similar interests, passions, or objectives.
 
-## Features :iphone:
+## Features :
 
 - **User Authentication**: Secure login and registration
 - **Group Chatrooms**: Create and join diverse chat groups
-- **Direct Messaging**: Personalized one-on-one conversations
 - **Real-time Updates**: Experience instant message updates
 - **Media Sharing**: Share images, videos, and documents
 - **Notifications**: Stay informed about new messages and group activities
@@ -30,7 +29,7 @@ If you would like to use or learn more about **Adalo**, visit their official pag
 
 The ChatHub is designed using Flutter and Dart. These tools are good mobile development tools. 
 
-Check out their documentations below:
+Check out their documentation below:
 
 * <a href="https://docs.flutter.dev/" target="_blank">Flutter</a>
 * <a href="https://dart.dev/guides" target="_blank">Dart</a>
@@ -39,7 +38,8 @@ Check out their documentations below:
 
 To run ChatHub, follow these installation steps: 
 
-```shell
+```
+shell
 git clone https://www.github.com/vassa33/ChatHub.git
 cd ChatHub
 npm install
@@ -48,6 +48,6 @@ npm start
 
 ## Authors :black_nib:
 
-- **Peggy Vanessa Otieno** - [Github](https://www.github.com/vassa33) (p.otieno@alustudent.com)
+- **Peggy Vanessa** - [Github](https://www.github.com/vassa33) (p.otieno@alustudent.com)
 - **Christian Okeke Makuochukwu** - [Github](https://www.github.com/Makuo67) (m.okeke@alustudent.com)
 - **Nino Chibuzor Nwachukwu** - [Github](https://www.github.com/Nino-Of-Tech) (c.nwachukwu@alustudent.com)
