@@ -35,7 +35,15 @@ class _LoginPageState extends State<LoginPage> {
       await HelperFunctions.saveUserLoggedInStatus(true);
       await HelperFunctions.saveUserEmailSF(email);
       await HelperFunctions.saveUserNameSF(snapshot.docs[0]['fullName']);
-      nextScreenReplace(context, const HomePage());
+      navigateToHomePage(BuildContext context) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const HomePage()),
+        );
+      }
+
+      // Call the method to navigate to the home page
+      navigateToHomePage(context);
     } else if (result != null) {
       // Handle Google Sign-In error
       showSnackbar(context, Colors.red, result);
